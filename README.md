@@ -45,10 +45,10 @@ This implementation parameterizes required configurable settings through variabl
 
 ## Architecture
 
-**Network architecture:**
+### Network architecture
 ![network_architecture](./files/network_architecture.png)
 
-**Container architecture:**
+### Container architecture
 ![container_architecture](./files/container_architecture.png)
 
 ## Connectivity
@@ -80,7 +80,7 @@ Execute `install.sh` to launch resources:
 
 ### Next steps
 
-When `install.sh` has finished, it will echo a message with the URL of the created Grafana endpoint. Open this URL in a browser, login to Grafana as `admin\admin` and open a dashboard `Tallinn Temperature`.
+When `install.sh` has finished, it will echo a message with the URL of the created Grafana endpoint. Open this URL in a browser, login to Grafana as `admin\admin` and open a dashboard from `Dashboards > Manage > Tallinn Temperature`.
 
 # Cleanup
 
