@@ -1,0 +1,27 @@
+version: "2"
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+     - ../configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+     - 9090:9090
+  pushgateway:
+    image: prom/pushgateway
+    container_name: pushgateway
+    ports:
+      - 9091:9091
+  grafana:
+    image: grafana/grafana
+    ports:
+     - "80:3000"
+    volumes:
+      - ../configs/grafana/:/etc/grafana/provisioning/
+    depends_on:
+      - prometheus
+  poller:
+    build: .
+    image: alpine:3.11
+    command: crond -f -l 8
+    ports:
+      - 5000:5000

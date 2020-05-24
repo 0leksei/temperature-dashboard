@@ -1,0 +1,7 @@
+- name: Run using a project directory
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - docker_compose:
+        project_src: .
+        build: yes
